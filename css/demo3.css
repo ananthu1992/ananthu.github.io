@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300");
+@font-face {
+  font-family: "HearthStone";
+  src: url("../icofont/fonts/Hearth\ Stone.ttf");
+}
+/* Color schemes */
+.demo-3 {
+  --color-text: #fff;
+  --color-bg: #f4bb47;
+  --color-link: #000000;
+  --color-link-hover: #fff;
+  --color-info: #fff;
+  --color-main-text: #000;
+  --color-scroll-text: #fff;
+  --color-scroll-black: #000000;
+  --color-scroll-red: #f2647d;
+  --font-scroll-text: "Josefin Sans", monospace;
+  --fontsize-scroll-text: 8vw;
+  transition: background-color 0.4s;
+}
+
+.content__section:not(:first-child) {
+  min-height: 100vh;
+}
+
+.content__img {
+  margin: 0 auto;
+}
+
+.content__text {
+  font-weight: 300;
+}
+
+@media screen and (max-width: 50em) {
+  .content__section:not(:first-child) {
+    min-height: 0;
+  }
+}
+
+.neum-btn {
+  font-family: Avenir;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: #2a2c39;
+  border-radius: 10px;
+  box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f4ba48;
+  border: none;
+}
+
+.neum-btn:hover {
+  box-shadow: -5px -5px 5px 0 rgba(253, 215, 141, 0.35);
+	background-color: #f4ba48;
+  color: #2a2c39;
+  text-decoration: none;
+}
+
+#about h1 {
+  font-family: HearthStone;
+  font-size: 46px;
+  line-height: 0.78;
+}
+
+#about h4 {
+  margin: 40px 0;
+  font-family: Avenir;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+#about p {
+  font-family: Avenir;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+#about .frame-img{
+  margin-left: 120px;
+}
+
+#works {
+  min-height: 340px;
+  border-radius: 10px;
+  box-shadow: -6px -6px 5px 0 #fa4b54;
+  background-color: #fa4049;
+}
+
+#works .carousel-control-prev {
+  border-radius: 50%;
+  box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.1);
+	background-color: #fa4b54;
+  width: 65px;
+  height: 65px;
+  left: -18%;
+  top: 35%;
+}
+
+#works .carousel-control-prev:hover {
+  box-shadow: -3px -3px 3px 0 #fd5b63;
+  background-color: #fa4049;
+}
+
+#works .carousel-control-next {
+  border-radius: 50%;
+  box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.1);
+	background-color: #fa4b54;
+  width: 65px;
+  height: 65px;
+  right: -18%;
+  top: 35%;
+}
+
+#works .carousel-control-next:hover {
+  box-shadow: -3px -3px 3px 0 #fd5b63;
+  background-color: #fa4049;
+}
+
+#works .carousel-item .rounded {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#works .carousel-item img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#works .neum-btn {
+  margin-top: 0;
+  color: white;
+  box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.1);
+	background-color: #fa4b54;
+}
+#works .neum-btn:hover {
+  margin-top: 0;
+  color: white;
+  box-shadow: -6px -6px 5px 0 #fa4b54;
+  background-color: #fa4049;
+}
+
+#works .tag {
+	font-family: 'HearthStone';
+  }
+
+#photography img{
+	width: 367px;
+	height: 206px;
+}
+
+#content-slider{
+	height: 280px !important;
+}
+
+#content-slider li:nth-child(even){
+	margin-top: 30px;
+}
+
+#resume .neum-btn{
+  box-shadow: 2.5px 2.5px 5px 0 rgba(0, 0, 0, 0.1);
+	background-color: #97dfbd;
+}
+
+#resume .neum-btn:hover{
+  box-shadow: -5px -5px 5px 0 rgba(178, 235, 208, 0.61);
+  background-color: #97dfbd;
+}
+
+#resume .scroll-div{
+  height: 500px;
+  overflow: scroll;
+}
+
+#resume .item {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  padding-top: 75px;
+  background: #ccc;
+  text-align: center;
+  color: #FFF;
+  font-size: 3em;
+}
