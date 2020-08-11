@@ -1,0 +1,406 @@
+/** Code By Webdevtrick ( https://webdevtrick.com ) **/
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700);
+@font-face {
+	font-family: "DMSans-Regular";
+	src: url("./font/DMSans-Regular.ttf");
+  }
+  @font-face {
+	font-family: "DMSans-Medium";
+	src: url("./font/DMSans-Medium.ttf");
+  }
+  @font-face {
+	font-family: "DMSans-Bold";
+	src: url("./font/DMSans-Bold.ttf");
+  }
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'DMSans-Regular', Arial, sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	color: black;
+	letter-spacing: .18em;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+ul, li {
+	list-style-type: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.l-left {
+	float: left;
+}
+.l-right {
+	float: right;
+}
+.end {
+	margin-top: 30px;
+	font-size: 3em;
+	font-weight: bold;
+	opacity: 0;
+	-webkit-transform: translateY(300px);
+	        transform: translateY(300px);
+	transition: opacity, -webkit-transform 1s;
+	transition: opacity, transform 1s;
+	transition: opacity, transform 1s, -webkit-transform 1s;
+	transition-delay: 1s;
+}
+.header-top {
+	background: rgba(0, 47, 77, .3);
+	height: 70px;
+	padding: 0 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 12;
+	box-sizing: border-box;
+}
+.header-top #menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  .header-top #menu > ul > li {
+	position: relative;
+	white-space: nowrap;
+	float: left;
+  }
+  
+  .header-top #menu a {
+	display: block;
+	position: relative;
+	color: #000000;
+	padding: 10px 25px;
+	margin-left: 5px;
+	transition: 0.3s;
+	font-size: 14px;
+	border-radius: 5px;
+	font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+  }
+.header-top #menu{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	display: flex;
+}
+
+ /* on select/hover */
+
+ .header-top #menu li.active > a::after {
+	position: absolute;
+	content: '';
+	height: 2px;
+	  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+	bottom: -4px; 
+   /****** 
+   optional values below 
+   ******/
+	/* center - (optional) use with adjusting width   */
+	margin: 0 auto;
+	  left: 0;
+	  right: 0;
+	  width: 20%;
+	  background: #e64e3f; 
+	  /* optional animation */
+	  -o-transition:.5s;
+		-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+  }
+
+  .header-top #menu li > a:hover:after {
+	width: 80%;
+	background: orange;
+  }
+h1 {
+	line-height: 70px;
+	height: 70px;
+}
+h1 a {
+	display: block;
+	padding: 0 10px;
+}
+.toggle-menu {
+	width: 50px;
+	height: 50px;
+	display: none;
+	position: relative;
+	top: 10px;
+}
+.toggle-menu i {
+	position: absolute;
+	display: block;
+	height: 2px;
+	background: black;
+	width: 30px;
+	left: 10px;
+	transition: all .3s;
+}
+.toggle-menu i:nth-child(1) {
+	top: 16px;
+}
+.toggle-menu i:nth-child(2) {
+	top: 24px;
+}
+.toggle-menu i:nth-child(3) {
+	top: 32px;
+}
+.open-menu i:nth-child(1) {
+	top: 25px;
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+}
+.open-menu i:nth-child(2) {
+	background: transparent;
+}
+.open-menu i:nth-child(3) {
+	top: 25px;
+	-webkit-transform: rotateZ(-45deg);
+	        transform: rotateZ(-45deg);
+}
+nav {
+ 	height: 0;
+	opacity: 0;
+  box-sizing: border-box;
+	background: rgba(0, 47, 77, .25);
+	position: fixed;
+	top: 70px;
+	width: 100%;
+  transition: all 1s;
+}
+.open-menu ~ nav {
+	opacity: 1;
+ 	padding: 80px 0;
+	z-index: 15;
+	height: 100%;
+}
+nav ul {
+	display: flex;
+}
+nav li {
+	flex: 1;
+}
+nav li a {
+	font-size: 2em;
+	display: block;
+	padding: 30px;
+	text-align: center;
+	transition: background .3s;
+}
+nav li a {
+	background: #ffffff;
+}
+nav li a:hover {
+	background: #212121;
+}
+section { 
+	text-align: center;
+}
+h2 {
+	font-size: 4em;
+	margin-bottom: 20px;
+}
+h3 {
+	font-weight: 300;
+	font-size: 2.8em;
+}
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+	background: white;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+}
+
+.fp-nav ul li a span:after {
+	content: "About";
+  }
+
+#fp-nav ul li a.active span, 
+.fp-slidesNav ul li a.active span, 
+#fp-nav ul li:hover a.active span, 
+.fp-slidesNav ul li:hover a.active span {
+	width: 16px;
+	height: 16px;
+	margin: -8px 0 0 -8px;
+	background: transparent;
+	box-sizing: border-box;
+	border: 2px solid #212121;
+}
+
+@media screen and (max-width: 767px) {
+
+	.toggle-menu {
+		display: inline-block;
+	}
+
+	nav ul {
+		flex-direction: column;
+	}
+
+	nav li {
+		margin-top: 1px;
+	}
+  
+  nav li a {
+    font-size: 1.5em;
+  }
+
+  .header-top #menu{
+	  display: none;
+  }
+
+  .ml6, .ml7, .ml8 {
+	font-size: 4.3em !important;
+  }
+  
+  .scroll-icon {
+    /* display: none; */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .open-menu ~ nav {
+		padding: 0;
+	}
+
+	nav li a {
+		padding: 15px;
+		color: #252a28;
+	}
+}
+  
+  .ml6 {
+	position: relative;
+	font-weight: 900;
+	font-size: 5.3em;
+	position: absolute;
+    bottom: 20px;
+  }
+  
+  .ml6 .text-wrapper {
+	position: relative;
+	display: inline-block;
+	padding-top: 0.2em;
+	padding-right: 0.05em;
+	padding-bottom: 0.1em;
+	overflow: hidden;
+  }
+  
+  .ml6 .letter {
+	display: inline-block;
+	line-height: 1em;
+  }
+
+  .ml7 {
+	position: relative;
+	font-weight: 900;
+	font-size: 5.3em;
+	position: absolute;
+    bottom: 20px;
+  }
+  
+  .ml7 .text-wrapper {
+	position: relative;
+	display: inline-block;
+	padding-top: 0.2em;
+	padding-right: 0.05em;
+	padding-bottom: 0.1em;
+	overflow: hidden;
+  }
+  
+  .ml7 .letter {
+	display: inline-block;
+	line-height: 1em;
+  }
+
+  .ml8 {
+	position: relative;
+	font-weight: 900;
+	font-size: 5.3em;
+	position: absolute;
+    bottom: 20px;
+  }
+  
+  .ml8 .text-wrapper {
+	position: relative;
+	display: inline-block;
+	padding-top: 0.2em;
+	padding-right: 0.05em;
+	padding-bottom: 0.1em;
+	overflow: hidden;
+  }
+  
+  .ml8 .letter {
+	display: inline-block;
+	line-height: 1em;
+  }
+
+  .about h2{
+		font-family: 'DMSans-Bold';
+		font-size: 32px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.16;
+		letter-spacing: normal;
+		text-align: left;
+		color: #252a28;
+  }
+
+  .about p{
+	font-family: Avenir;
+	font-size: 14px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.32;
+	letter-spacing: normal;
+	text-align: left;
+	color: #252a28;
+}
+
+
+.hover {
+	cursor: pointer;
+	display: block;
+	font-family: Avenir;
+	font-size: 14px;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.64;
+	letter-spacing: normal;
+	text-align: left;
+  }
+  .hover span {
+	background-image: linear-gradient(transparent calc(100% - 5px), #e64e3f 2px);
+	background-size: 0;
+	background-repeat: no-repeat;
+	display: inline;
+	-webkit-transition: 0.5s ease;
+	transition: 0.5s ease;
+	padding: 10px 0;
+  }
+  .hover:hover span {
+	background-size: 100%;
+  }
