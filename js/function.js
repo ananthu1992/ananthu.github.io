@@ -8,7 +8,7 @@ $header_top.find('a').on('click', function() {
 
 $('#fullpage').fullpage({
 //   sectionsColor: ['#f4bb47', '#fa4049', '#ffffff', '#97dfbd', '#000000'],
-  sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#000000'],
+  sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#252a28'],
   sectionSelector: '.vertical-scrolling',
   navigation: false,
   slidesNavigation: true,

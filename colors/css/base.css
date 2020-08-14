@@ -521,7 +521,7 @@ main {
 	}
 	.content__text,
 	.js.ioapi .content__text {
-		bottom: 2rem;
+		bottom: 7rem;
 	}
 	.content__section:first-child, 
 	.content__section:last-child {
