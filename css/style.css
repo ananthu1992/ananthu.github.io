@@ -15,6 +15,53 @@
 	font-family: "Bebas";
 	src: url("../font/BEBAS.ttf");
   }
+  /* text shadow */
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+
+    20% {  
+        transform: translateY(-1em);
+        text-shadow: 
+            0 0.125em 0 #0c2ffb, 
+            0 0.25em 0 #2cfcfd, 
+            0 -0.125em 0 #fb203b, 
+            0 -0.25em 0 #fefc4b;
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+        text-shadow: 
+            0 -0.0625em 0 #0c2ffb, 
+            0 -0.125em 0 #2cfcfd, 
+            0 0.0625em 0 #fb203b, 
+            0 0.125em 0 #fefc4b;
+    }
+    
+   60% {
+        transform: translateY(-0.25em);
+        text-shadow: 
+            0 0.03125em 0 #0c2ffb, 
+            0 0.0625em 0 #2cfcfd, 
+            0 -0.03125em 0 #fb203b, 
+            0 -0.0625em 0 #fefc4b;
+    }
+
+    80% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -87,12 +134,14 @@ ul, li {
 	position: relative;
 	color: #000000;
 	padding: 10px 25px;
+	text-transform: uppercase;
 	margin-left: 5px;
 	transition: 0.3s;
-	font-size: 14px;
+	font-size: 12px;
 	border-radius: 5px;
-	font-weight: 600;
+	font-weight: 300;
 	font-family: "Open Sans", sans-serif;
+	text-decoration: none;
   }
 .header-top #menu{
 	position: absolute;
@@ -128,8 +177,12 @@ ul, li {
 
   .header-top #menu li > a:hover:after {
 	width: 80%;
-	background: orange;
+	background: orange;	
   }
+  .header-top #menu li > a:hover{
+	font-weight: 500;
+  }
+  
 h1 {
 	line-height: 70px;
 	height: 70px;
@@ -222,7 +275,7 @@ h3 {
 	font-weight: 300;
 	font-size: 2.8em;
 }
-#fp-nav ul li a span, 
+/* #fp-nav ul li a span, 
 .fp-slidesNav ul li a span {
 	background: white;
 	width: 8px;
@@ -239,7 +292,7 @@ h3 {
 	background: transparent;
 	box-sizing: border-box;
 	border: 2px solid #212121;
-}
+} */
 
 @media screen and (max-width: 767px) {
 	.toggle-menu {
@@ -313,12 +366,17 @@ font-size: 14px;
 font-weight: 300;
 font-stretch: normal;
 font-style: normal;
-line-height: 1.32;
 letter-spacing: normal;
 text-align: left;
 color: #252a28;
 }
 
+.about p span{
+	font-family: Avenir;
+	line-height: 4.32;
+	font-weight: 300;
+	display: block;
+	}
 
 .hover {
 cursor: pointer;
@@ -347,11 +405,11 @@ background-size: 100%;
 
 .uiux p{
 font-family: Avenir;
-font-size: 10px;
+font-size: 12px;
 font-weight: 300;
 font-stretch: normal;
 font-style: normal;
-line-height: 1.9;
+line-height: 2;
 letter-spacing: normal;
 text-align: left;
 color: #252a28;
@@ -368,6 +426,17 @@ letter-spacing: normal;
 text-align: left;
 color: #252a28;
 }
+
+.btn-outline-dark{
+	padding: 9px 65px !important;
+    border: 1.5px solid !important;
+    border-radius: 0 !important;
+}
+
+.btn-outline-dark:hover{
+	font-weight: 600 !important;
+}
+
 
 .resume{
 	background: #f4ba48;
@@ -389,14 +458,14 @@ color: #252a28;
 	letter-spacing: normal;
 	text-align: center;
 	color: #ffffff;
-	padding: 0 0 0 210px;
+	padding: 0 0 0 255px;
 }
 
 .contact h1{
-	padding: 0 0 0 210px;
+	animation: text-shadow 1.5s ease-in-out;
 	height: 204.5px;
 	font-family: 'Bebas';
-	font-size: 214.5px;
+	font-size: 250px;
 	font-weight: normal;
 	font-stretch: normal;
 	font-style: normal;
@@ -404,6 +473,13 @@ color: #252a28;
 	letter-spacing: normal;
 	text-align: center;
 	color: #ffffff;
+	margin-top: -20%;
+    margin-bottom: 20px;
+}
+
+.contact-info{
+	position: absolute;
+    bottom: -90%;
 }
 
 .contact {
@@ -413,15 +489,15 @@ color: #252a28;
 .contact p {
 	opacity: 0.6;
 	font-family: Avenir;
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: normal;
 	font-stretch: normal;
 	font-style: normal;
 	line-height: 2.3;
 	letter-spacing: normal;
-	text-align: left;
+	text-align: justify;
 	color: #ffffff;
-	padding: 0 210px;
+	padding: 0 255px;
 }
 
 .contact a {
@@ -431,7 +507,7 @@ color: #252a28;
 
 .ml6 {
 	font-weight: 900;
-	font-size: 5.3em;
+	font-size: 80px;
 	position: absolute;
     bottom: 10%;
   }
@@ -452,7 +528,7 @@ color: #252a28;
 
   .ml7 {
 	font-weight: 900;
-	font-size: 5.3em;
+	font-size: 80px;
 	position: absolute;
     bottom: 10%;
   }
@@ -473,7 +549,7 @@ color: #252a28;
 
   .ml8 {
 	font-weight: 900;
-	font-size: 5.3em;
+	font-size: 80px;
 	position: absolute;
     bottom: 10%;
   }

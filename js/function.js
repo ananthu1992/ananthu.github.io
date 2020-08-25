@@ -17,16 +17,17 @@ $('#fullpage').fullpage({
   menu: '#menu',
 
   afterLoad: function(anchorLink, index) {
-    $header_top.css('background', 'transparent');
-    $nav.css('background', 'rgba(0, 47, 77, .25)');
-    // if (index == 5) {
-    //     $('#fp-nav').hide();
-    //   }
+    if (index == 4) {
+        $('.header-top').hide();
+      } else {
+        $header_top.css('background', 'rgba(255, 255, 255)');
+      }
   },
 
   onLeave: function(index, nextIndex, direction) {
-    if(index == 5) {
-      $('#fp-nav').show();
+    if(index == 4) {
+      $('.header-top ul li a').css("color", 'inherit');
+      $('.header-top').show();
     }
   },
 
@@ -88,3 +89,4 @@ anime.timeline({loop: true})
         easing: "easeOutExpo",
         delay: 1000
       });
+
