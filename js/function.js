@@ -39,7 +39,7 @@ $('#fullpage').fullpage({
 var textWrapper = document.querySelector('.ml6 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
+anime.timeline({loop: false})
   .add({
     targets: '.ml6 .letter',
     translateY: ["1.1em", 0],
@@ -48,7 +48,7 @@ anime.timeline({loop: true})
     delay: (el, i) => 50 * i
   }).add({
     targets: '.ml6',
-    opacity: 0,
+    opacity: 1,
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
@@ -108,4 +108,19 @@ function close() {
 buttons.forEach(button => button.addEventListener('click', open));
 overlay.addEventListener('click', close);
 
+
+
+// envelope animation
+window.onload = function () {
+  var tl = new TimelineLite({ delay: 1 }),
+    firstBg = document.querySelectorAll(".text__first-bg"),
+    secBg = document.querySelectorAll(".text__second-bg"),
+    word = document.querySelectorAll(".text__word");
+
+  tl.to(firstBg, 0.2, { scaleX: 1 })
+    .to(secBg, 0.2, { scaleX: 1 })
+    .to(word, 0.1, { opacity: 1 }, "-=0.1")
+    .to(firstBg, 0.2, { scaleX: 0 })
+    .to(secBg, 0.2, { scaleX: 0 });
+};
 
